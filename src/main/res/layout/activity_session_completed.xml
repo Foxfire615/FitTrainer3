@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/sessionComplete_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="18dp"
+            android:text="Back"/>
+
+        <EditText
+            android:id="@+id/sessionComplete_text"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/sessionComplete_back_button"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/sessionComplete_back_button"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Session Complete?"
+            android:visibility="visible"/>
+
+        <EditText
+            android:id="@+id/sessionComplete_confirmation_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/sessionComplete_text"
+            android:layout_below="@+id/sessionComplete_back_button"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="If you've completed your session, please sign below and press the accept button."
+            android:visibility="visible"/>
+
+        <EditText
+            android:id="@+id/sessionComplete_signature_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/sessionComplete_confirmation_text"
+            android:layout_below="@+id/sessionComplete_confirmation_text"
+            android:layout_marginTop="57dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Sign Here:"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/sessionComplete_signature_text"
+            android:layout_alignStart="@+id/sessionComplete_signature_text"
+            android:id="@+id/textInputLayout5">
+
+            <EditText
+                android:id="@+id/sessionComplete_signiture_textBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Signiture"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/sessionComplete_accept_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textInputLayout5"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="18dp"
+            android:text="Accept"/>
+    </RelativeLayout>
+</FrameLayout>

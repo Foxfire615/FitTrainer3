@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/main_button_add"
+            android:layout_width="250px"
+            android:layout_height="100px"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/mainMenu_text"
+            android:layout_marginTop="11dp"
+            android:onClick="onClickAdd"
+            android:text="@string/button_add"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/main_button_edit"
+            android:layout_width="250px"
+            android:layout_height="100px"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/main_button_add"
+            android:layout_marginTop="14dp"
+            android:onClick="onClickEdit"
+            android:text="@string/button_edit"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/main_button_delete"
+            android:layout_width="250px"
+            android:layout_height="100px"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/main_button_edit"
+            android:layout_marginTop="15dp"
+            android:text="@string/button_delete"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/main_button_session"
+            android:layout_width="250px"
+            android:layout_height="100px"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/main_button_delete"
+            android:layout_marginTop="16dp"
+            android:onClick="onClickSession"
+            android:text="@string/button_session"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/main_button_add"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/mainMenu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/main_button_add"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Customer List"
+                android:visibility="visible" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/customer_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignEnd="@+id/mainMenu_text"
+                android:orientation="vertical">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

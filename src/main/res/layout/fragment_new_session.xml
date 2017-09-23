@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:paddingBottom="@dimen/activity_vertical_margin"
+             android:paddingLeft="@dimen/activity_horizontal_margin"
+             android:paddingRight="@dimen/activity_horizontal_margin"
+             android:paddingTop="@dimen/activity_vertical_margin"
+             android:background="@android:color/holo_blue_bright">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/session_create_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="New Session:"/>
+
+        <EditText
+            android:id="@+id/session_date_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/session_create_text"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Enter Date:"
+            android:visibility="visible"/>
+
+        <EditText
+            android:id="@+id/session_price_text"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/session_date_text"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Price: "/>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/session_price_text"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="33dp"
+            android:layout_alignParentBottom="true">
+
+            <EditText
+                android:id="@+id/session_security_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Security Number:"
+                android:layout_below="@+id/session_expiration_text"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/session_expiration_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Expiration Date:"
+                android:layout_marginTop="11dp"
+                android:layout_below="@+id/session_card_text"
+                android:layout_alignParentStart="true"/>
+
+            <EditText
+                android:id="@+id/session_card_text"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Card Number:"
+                android:layout_alignBottom="@+id/textInputLayout"
+                android:layout_alignParentStart="true"/>
+
+            <EditText
+                android:id="@+id/session_billing_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Billing Information: "
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/session_billing_text"
+                android:layout_toEndOf="@+id/session_expiration_text"
+                android:id="@+id/textInputLayout">
+
+                <EditText
+                    android:id="@+id/session_card_textBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Card Number"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/session_expiration_text"
+                android:layout_toEndOf="@+id/session_expiration_text"
+                android:id="@+id/textInputLayout3">
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/session_security_text"
+                android:layout_toEndOf="@+id/session_expiration_text">
+
+                <EditText
+                    android:id="@+id/session_expiration_textBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Expiration Date"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/session_security_text"
+                android:layout_toEndOf="@+id/session_security_text">
+
+                <EditText
+                    android:id="@+id/session_security_textBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Security Number"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/session_security_text"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textInputLayout4">
+
+                <EditText
+                    android:id="@+id/session_signiture_textBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:hint="Signiture"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/session_apply_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/textInputLayout4"
+                android:layout_marginEnd="12dp"
+                android:onClick="onClickApply"
+                android:text="Apply" />
+
+        </RelativeLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/session_price_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/session_price_text"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/session_date_text">
+
+            <EditText
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/session_date_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/session_price_text"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/session_date_text">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="(MM/DD/YY)"/>
+        </android.support.design.widget.TextInputLayout>
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/purchase_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="12dp"
+            android:onClick="onClickBack"
+            android:text="Back" />
+
+        <EditText
+            android:id="@+id/purchase_thanks_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/purchase_back_button"
+            android:layout_toEndOf="@+id/purchase_back_button"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Thank you for your purchase!"/>
+
+        <EditText
+            android:id="@+id/purchase_question_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/purchase_back_button"
+            android:layout_marginTop="55dp"
+            android:layout_toEndOf="@+id/purchase_back_button"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Would you like the receipt printed or emailed?"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+
+        <Button
+            android:id="@+id/purchase_print_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Print"
+            android:layout_below="@+id/purchase_question_text"
+            android:layout_alignStart="@+id/purchase_question_text"/>
+
+        <EditText
+            android:id="@+id/purchase_email_text"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/purchase_print_button"
+            android:layout_centerVertical="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Email:"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/purchase_email_text"
+            android:layout_alignStart="@+id/purchase_email_text"
+            android:layout_marginTop="11dp"
+            android:id="@+id/textInputLayout2">
+
+            <EditText
+                android:id="@+id/purchase_email_textBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address"
+                android:visibility="visible"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/purchase_send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textInputLayout2"
+            android:layout_below="@+id/textInputLayout2"
+            android:layout_marginTop="18dp"
+            android:text="Send"/>
+
+    </RelativeLayout>
+</FrameLayout>

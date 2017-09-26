@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:app="http://schemas.android.com/apk/res-auto"
-
              android:layout_width="match_parent"
              android:layout_height="match_parent">
 
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/edit_apply_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
         android:orientation="vertical">
 
         <Button
@@ -57,10 +56,9 @@
             android:layout_height="150dp"
             android:layout_alignStart="@+id/edit_Title"
             android:layout_below="@+id/edit_Title"
-            android:layout_marginTop="11dp"
             app:srcCompat="@android:color/black" />
 
-        <EditText
+        <TextView
             android:id="@+id/edit_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,9 +73,10 @@
             android:layout_height="240dp"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/edit_Customer_Button_Upload"
+            android:layout_below="@+id/edit_Customer_Button_Upload"
             android:orientation="vertical">
 
-            <EditText
+            <TextView
                 android:id="@+id/edit_Billing_Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -86,44 +85,49 @@
                 android:text="Billing Address"
                 android:visibility="visible" />
 
-            <TextView
+            <EditText
                 android:id="@+id/edit_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Name"
+
+                android:hint="Name"
                 android:visibility="visible" />
 
-            <TextView
+            <EditText
                 android:id="@+id/edit_Address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Address"
+
+                android:hint="Address"
                 android:visibility="visible" />
 
-            <TextView
+            <EditText
                 android:id="@+id/edit_City"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="City"
+
+                android:hint="City"
                 android:visibility="visible" />
 
-            <TextView
+            <EditText
                 android:id="@+id/edit_State"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="State"
+
+                android:hint="State"
                 android:visibility="visible" />
 
-            <TextView
+            <EditText
                 android:id="@+id/edit_Zip_Code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Zip Code" />
+
+                android:hint="Zip Code" />
 
         </LinearLayout>
 

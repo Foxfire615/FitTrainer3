@@ -1,5 +1,6 @@
 package com.bignerdranch.android.fittrainer.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,35 +14,26 @@ import android.widget.Toast;
 import com.bignerdranch.android.fittrainer.Fragments.EditCustomerFragment;
 import com.bignerdranch.android.fittrainer.R;
 
+import java.util.UUID;
+
 
 /**
  * Created by Talon on 9/22/2017.
  */
 
-public class EditCustomerActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_customer);
+public class EditCustomerActivity extends /*AppCompatActivity*/ SingleFragmentActivity {
 
-        if (findViewById(R.id.edit_customer_fragment_container) != null) {
-            if (savedInstanceState != null) {
-                return;
-            }
+    public static final String EXTRA_CUSTOMER_ID = "com.bignerdranch.android.fittrainer.customer_id";
 
-            // Create a fragment manager.
-            FragmentManager fm = getSupportFragmentManager();
-            Fragment fragment = fm.findFragmentById(R.id.edit_customer_fragment_container);
-
-            EditCustomerFragment editCustomerFragment = new EditCustomerFragment();
-
-            // If there are no fragments on the screen, add fragment_container.
-            if (fragment == null) {
-                fm.beginTransaction()
-                        .add(R.id.edit_customer_fragment_container,editCustomerFragment)
-                        .commit();
-            }
-        }
+    public static Intent newIntent(Context packageContext, UUID mId) {
+        Intent intent = new Intent(packageContext, EditCustomerActivity.class);
+        intent.putExtra(EXTRA_CUSTOMER_ID, mId);
+        return intent;
+    }
+    
+    protected Fragment createFragment() {
+        UUID customerId = (UUID) getIntent().getSerializableExtra(EXTRA_CUSTOMER_ID);
+        return EditCustomerFragment.newInstance(customerId);
     }
 
     // Creates/Inflates options menu.

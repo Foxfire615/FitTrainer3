@@ -16,11 +16,6 @@ import com.bignerdranch.android.fittrainer.R;
 
 public class MainMenuActivity extends /*SingleFragmentActivity*/ AppCompatActivity {
     // Starts the class that creates a list fragment to be shown on the screen.
-    /*@Override
-    protected Fragment createFragment() {
-        return new CustomerListFragment();
-    }
-    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

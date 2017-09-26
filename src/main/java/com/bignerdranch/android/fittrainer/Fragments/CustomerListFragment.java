@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bignerdranch.android.fittrainer.Activities.EditCustomerActivity;
 import com.bignerdranch.android.fittrainer.Activities.SessionCompleteActivity;
 import com.bignerdranch.android.fittrainer.Activities.SessionListActivity;
 import com.bignerdranch.android.fittrainer.Customer;
@@ -39,6 +40,12 @@ public class CustomerListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
     private class CustomerHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         // TextView element.
         private TextView mNameTextView;
@@ -58,7 +65,8 @@ public class CustomerListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(getActivity(), SessionListActivity.class);
+            //Intent intent = new Intent(getActivity(), SessionListActivity.class);
+            Intent intent = EditCustomerActivity.newIntent(getActivity(), mCustomer.getId());
             startActivity(intent);
         }
     }
@@ -98,10 +106,12 @@ public class CustomerListFragment extends Fragment {
         CustomerList customerList = CustomerList.get(getActivity());
         List<Customer> customers = customerList.getList();
 
-        mAdapter = new CustomerAdapter(customers);
-        mCustomerRecyclerView.setAdapter(mAdapter);
+        if (mAdapter == null) {
+            mAdapter = new CustomerAdapter(customers);
+            mCustomerRecyclerView.setAdapter(mAdapter);
+        } else {
+            mAdapter.notifyDataSetChanged();
+        }
     }
-
-
 }
 
